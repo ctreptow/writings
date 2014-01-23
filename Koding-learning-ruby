@@ -1,3 +1,5 @@
+# Getting started learning Ruby
+
 So, you want to learn the Ruby programming language?  A great way to learn a new programming language is through
 exercises called koans.
 
@@ -10,49 +12,73 @@ Let's get started!
 
 We're going to install our Ruby koans from github.com.  Here's the link:  https://github.com/neo/ruby_koans
 
-First step: Verify we have Ruby
+## First step: Verify we have Ruby
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 ruby --version
+```
 
 It will say the version of Ruby that has been installed for us.
 
-Second step: Verify we the rake tool
+## Second step: Verify we the rake tool
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 rake --version
+```
 
 It will say the version of Ruby that has been installed for us.
 
-Third step: Install the Ruby koans
+## Third step: Install the Ruby koans
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 git clone https://github.com/neo/ruby_koans.git
+```
 
-Fourth step: Generate the koans
+## Fourth step: Generate the koans
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 cd ruby_koans
 rake gen
+```
 
-Fifth Step: Try one!
+## Fifth Step: Try one!
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 cd koans
 rake
 
 vim about_asserts.rb (or ACE)
+```
 
-Sixth Step: Achieve enlightenment
+## Sixth Step: Achieve enlightenment
 
 This last step is really about continuing the process.  You will be repeating the steps as you learn.
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 clear && rake
 vim <some file>
+```
 
 Don't like having to run rake by hand?  That's cool, we have a solution!
 
+From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+
+```
 cd ruby_koans
 rake
 # decide to run rake automatically from now on as you edit
 gem install watchr
 watchr ./koans/koans.watchr
-
-
-
-
+```
