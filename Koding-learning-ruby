@@ -1,40 +1,56 @@
 # Getting started learning Ruby
 
-So, you want to learn the Ruby programming language?  A great way to learn a new programming language is through
-exercises called koans.
+So, you want to learn the Ruby programming language?  Fantastic!  A great way to learn a new programming language is
+ through exercises called koans.
 
-Koans come from Buddhism (http://www.wisegeek.com/what-is-a-zen-koan.htm), but they have been adapted to help you
-reach "enlightenment" with Ruby.
+Koans come from [Buddhism](http://www.wisegeek.com/what-is-a-zen-koan.htm), but they have been adapted to help you
+reach *enlightenment* with Ruby.
 
-The koans we are going to start with are found here:  http://rubykoans.com/.
+The koans we are going to start with are found [here](http://rubykoans.com/).
 
-Let's get started!
 
-We're going to install our Ruby koans from github.com.  Here's the link:  https://github.com/neo/ruby_koans
+Ready? Let's get started!
+
+
+We're going to install our Ruby koans from [github](https://github.com/neo/ruby_koans)
+
+**_Note:_** For any of the commands you'll see in this tutorial, you'll first need to be in your
+[Koding Terminal](https://koding.com/Develop/Terminal)
+
 
 ## First step: Verify we have Ruby
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+An easy way to verify Ruby is installed is to simply ask for its version like this:
 
 ```
 ruby --version
 ```
 
-It will say the version of Ruby that has been installed for us.
+It will say the version of Ruby that has been installed for us, like this:
+
+```
+ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
+```
+
 
 ## Second step: Verify we the rake tool
-
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
 
 ```
 rake --version
 ```
 
-It will say the version of Ruby that has been installed for us.
+It will say the version of rake that has been installed for us, like this:
+
+```
+rake, version 0.9.2.2
+```
+Strictly speaking, you don't need to install rake, but it will be slightly more convenient, and it is good to know
+about the rake tool for your future endeavors.
 
 ## Third step: Install the Ruby koans
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+You don't need to know anything about git at this point.  All this is doing, is copying the files from a location
+on github.com to your virtual machine.
 
 ```
 git clone https://github.com/neo/ruby_koans.git
@@ -42,7 +58,11 @@ git clone https://github.com/neo/ruby_koans.git
 
 ## Fourth step: Generate the koans
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+Now that we have all the files we need, we can generate the files that actually allow us to work through the koans,
+ themselves.  The great thing is that if you want to start over, you can just change that *gen* to *regen* and it
+ will be as if you hadn't started.
+ 
+You'll want to be in the *ruby_koans* directory when you do this.  As you can see, it is a simple *cd* command away.
 
 ```
 cd ruby_koans
@@ -51,34 +71,117 @@ rake gen
 
 ## Fifth Step: Try one!
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+Now, we're all set.  Time to try one!
 
 ```
 cd koans
-rake
-
-vim about_asserts.rb (or ACE)
 ```
+At this point, you should be in the *koans* directory.  Something like this:
+```
+/home/ctreptow/ruby_koans/koans
+```
+
+Now, you can see where to begin your journey via the *rake* command:
+
+```
+rake
+```
+
+You'll see output like this the first time:
+
+```
+/usr/bin/ruby1.9.1 path_to_enlightenment.rb
+AboutAsserts#test_assert_truth has damaged your karma.
+ 
+The Master says:
+  You have not yet reached enlightenment.
+ 
+The answers you seek...
+  Failed assertion.
+ 
+Please meditate on the following code:
+  /home/ctreptow/ruby_koans/koans/about_asserts.rb:10:in `test_assert_truth'
+ 
+mountains are merely mountains
+your path thus far [X_________________________________________________] 0/280
+```
+
+So, we now know that the first failure is in a file called *about_asserts.rb* on line *10*.
+
+At this point, you can edit the file using vim, like this:
+
+```
+vim about_asserts.rb
+```
+
+If you're more comfortable, feel free to use the [Ace](https://koding.com/Ace) editor.
+
+No matter which you choose, the task is the same: get this test to pass!
+
+This one is easy: change *false* to *true* on line *10*.
+
+Once done, it's time to see how you've done with our good friend: *rake*:
+
+```
+AboutAsserts#test_assert_truth has expanded your awareness.
+AboutAsserts#test_assert_with_message has damaged your karma.
+ 
+The Master says:
+  You have not yet reached enlightenment.
+  You are progressing. Excellent. 1 completed.
+ 
+The answers you seek...
+  This should be true -- Please fix this
+ 
+Please meditate on the following code:
+  /home/ctreptow/ruby_koans/koans/about_asserts.rb:16:in `test_assert_with_message'
+ 
+learn the rules so you know how to break them properly
+your path thus far [.X________________________________________________] 1/280
+```
+
+Now that's what I call progress!!
+
 
 ## Sixth Step: Achieve enlightenment
 
 This last step is really about continuing the process.  You will be repeating the steps as you learn.
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+You may find it nicer to add he *clear* command.  This will clear the old output from the screen for you.
+
+Like this:
 
 ```
 clear && rake
 vim <some file>
 ```
 
-Don't like having to run rake by hand?  That's cool, we have a solution!
+**_Note:_** Don't like having to run rake by hand?  That's cool, we have a solution!
 
-From your [Koding Terminal](https://koding.com/Develop/Terminal), type the following:
+First go up one directory:
 
 ```
-cd ruby_koans
-rake
-# decide to run rake automatically from now on as you edit
-gem install watchr
+cd ..
+```
+
+Then install *watchr*
+
+```
+sudo gem install watchr
+```
+
+Now, start watching the folder:
+
+```
 watchr ./koans/koans.watchr
 ```
+
+You'll probably find it way more convenient to use Ace with watchr.
+
+
+Remember to take breaks, your Koding environment will be waiting for you.  Most of all...
+
+Have fun!
+
+Soon you'll be a true Rubyist!
+
