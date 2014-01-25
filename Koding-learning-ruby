@@ -167,7 +167,7 @@ sudo gem install watchr
 Now, start watching the folder:
 
 ```
-watchr ./koans/koans.watchr
+watchr ./koans/koans.watchr &
 ```
 
 You'll probably find it way more convenient to use [Ace](https://koding.com/Ace) with *watchr* running, because as soon as you save the file, *watchr* will run rake for you and the output could get hard to follow.
